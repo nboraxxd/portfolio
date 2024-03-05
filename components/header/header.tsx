@@ -25,7 +25,7 @@ export default function Header() {
             >
               <Link
                 href={link.hash}
-                className="flex w-full items-center justify-center p-3 transition-colors hover:text-gray-950"
+                className="focus-primary flex w-full items-center justify-center p-3 transition-colors hover:text-gray-950"
               >
                 {link.name}
               </Link>
