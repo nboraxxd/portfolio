@@ -1,4 +1,5 @@
 import React from 'react'
+import { v4 as uuidv4 } from 'uuid'
 import { CgWorkAlt } from 'react-icons/cg'
 import { FaReact } from 'react-icons/fa'
 import { LuGraduationCap } from 'react-icons/lu'
@@ -62,25 +63,34 @@ export const experiencesData = [
 
 export const projectsData = [
   {
+    id: uuidv4(),
     title: 'Gamehub',
     description:
       'A social media platform for gamers. It has features like user authentication, posting, commenting, liking and following. I was the front-end developer.',
     tags: ['React', 'TypeScript', 'Chakra UI', 'TanStack Query'],
     imageUrl: gamehubImg,
+    github: 'https://github.com/nboraxxd/game-hub',
+    url: 'https://game-hub-seven-phi.vercel.app',
   },
   {
+    id: uuidv4(),
     title: 'Sell Courses',
     description:
       'A platform for selling courses. It has features like user authentication, course creation, course purchasing and course rating. I was the front-end developer.',
     tags: ['React', 'Javascript', 'Redux', 'Bootstrap'],
     imageUrl: sellCoursesImg,
+    github: 'https://github.com/nboraxxd/sell-courses',
+    url: 'https://sell-courses.vercel.app',
   },
   {
+    id: uuidv4(),
     title: 'Shopee',
     description:
       'A clone of the Shopee website. It has features like user authentication, product listing, product searching and product purchasing. I was the front-end developer.',
     tags: ['React', 'TypeScript', 'Tailwind', 'Framer Motion'],
     imageUrl: shopeeImg,
+    github: 'https://github.com/nboraxxd/shopee-site',
+    url: 'https://shopee-site-xi.vercel.app',
   },
 ] as const
 
