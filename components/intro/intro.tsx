@@ -1,19 +1,30 @@
 'use client'
 
 import Image from 'next/image'
+import { useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 import { BsArrowRight } from 'react-icons/bs'
 import { HiDownload } from 'react-icons/hi'
 import { FaGithub } from 'react-icons/fa'
 
+import { useActiveSectionStore } from '@/stores/active-section-store'
 import { CTALink } from '@/components/intro'
 import avatar from '@/public/avatar.png'
 
 export default function Intro() {
   const MotionImage = motion(Image)
+  const { ref, inView } = useInView({ threshold: 0.75 })
+  const { setActiveSection } = useActiveSectionStore()
+
+  useEffect(() => {
+    if (inView) {
+      setActiveSection('Home')
+    }
+  }, [inView, setActiveSection])
 
   return (
-    <section id="home" className="mx-auto mb-28 max-w-[50rem] scroll-mt-96 text-center sm:mb-0">
+    <section id="home" ref={ref} className="mx-auto mb-28 max-w-[50rem] scroll-mt-96 text-center sm:mb-0">
       {/* Avatar */}
       <div className="flex items-center justify-center">
         <div className="relative">
