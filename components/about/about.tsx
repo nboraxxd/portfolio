@@ -10,13 +10,13 @@ export default function About() {
   const ref = useRef<HTMLElement>(null)
   const isInView = useInView(ref, { amount: 0.75 })
 
-  const { setActiveSection } = useActiveSectionStore()
+  const { setActiveSection, timeOfLastClick } = useActiveSectionStore()
 
   useEffect(() => {
-    if (isInView) {
+    if (isInView && Date.now() - timeOfLastClick > 1000) {
       setActiveSection('About')
     }
-  }, [isInView, setActiveSection])
+  }, [isInView, setActiveSection, timeOfLastClick])
 
   return (
     <motion.section

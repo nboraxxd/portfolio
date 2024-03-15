@@ -16,13 +16,13 @@ export default function Intro() {
   const ref = useRef<HTMLElement>(null)
   const isInView = useInView(ref, { amount: 0.75 })
 
-  const { setActiveSection } = useActiveSectionStore()
+  const { setActiveSection, timeOfLastClick } = useActiveSectionStore()
 
   useEffect(() => {
-    if (isInView) {
+    if (isInView && Date.now() - timeOfLastClick > 1000) {
       setActiveSection('Home')
     }
-  }, [isInView, setActiveSection])
+  }, [isInView, setActiveSection, timeOfLastClick])
 
   return (
     <section id="home" ref={ref} className="mx-auto mb-28 max-w-[50rem] scroll-mt-96 text-center sm:mb-0">

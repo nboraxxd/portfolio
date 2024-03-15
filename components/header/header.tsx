@@ -4,11 +4,17 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 
 import { useActiveSectionStore } from '@/stores/active-section-store'
+import { TSection } from '@/types/utils.type'
 import { links } from '@/lib/data'
 import { cn } from '@/utils'
 
 export default function Header() {
-  const { activeSection, setActiveSection } = useActiveSectionStore()
+  const { activeSection, setActiveSection, setTimeOfLastClick } = useActiveSectionStore()
+
+  function handleClickSectionLink(sectionName: TSection) {
+    setTimeOfLastClick(Date.now())
+    setActiveSection(sectionName)
+  }
 
   return (
     <header className="relative z-50">
@@ -33,7 +39,7 @@ export default function Header() {
                   'text-gray-950': activeSection === link.name,
                   'transition-colors hover:text-gray-950': activeSection !== link.name,
                 })}
-                onClick={() => setActiveSection(link.name)}
+                onClick={() => handleClickSectionLink(link.name)}
               >
                 {link.name}
 

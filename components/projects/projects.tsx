@@ -12,13 +12,13 @@ export default function Projects() {
   const ref = useRef<HTMLElement>(null)
   const isInView = useInView(ref, { amount: 0.5 })
 
-  const { setActiveSection } = useActiveSectionStore()
+  const { setActiveSection, timeOfLastClick } = useActiveSectionStore()
 
   useEffect(() => {
-    if (isInView) {
+    if (isInView && Date.now() - timeOfLastClick > 1000) {
       setActiveSection('Projects')
     }
-  }, [isInView, setActiveSection])
+  }, [isInView, setActiveSection, timeOfLastClick])
 
   return (
     <section id="projects" ref={ref} className="scroll-mt-28">
