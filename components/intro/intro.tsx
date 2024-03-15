@@ -13,7 +13,7 @@ export default function Intro() {
   const MotionImage = motion(Image)
 
   return (
-    <section className="mx-auto mb-28 max-w-[50rem] text-center sm:mb-0">
+    <section id="home" className="mx-auto mb-28 max-w-[50rem] scroll-mt-96 text-center sm:mb-0">
       {/* Avatar */}
       <div className="flex items-center justify-center">
         <div className="relative">
