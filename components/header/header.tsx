@@ -1,14 +1,14 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
 import { motion } from 'framer-motion'
 
+import { useActiveSectionStore } from '@/stores/active-section-store'
 import { links } from '@/lib/data'
 import { cn } from '@/utils'
 
 export default function Header() {
-  const [activeSection, setActiveSection] = useState<(typeof links)[number]['name']>('Home')
+  const { activeSection, setActiveSection } = useActiveSectionStore()
 
   return (
     <header className="relative z-50">
