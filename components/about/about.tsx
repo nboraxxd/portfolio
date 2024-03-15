@@ -1,22 +1,13 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { motion } from 'framer-motion'
 
-import { useActiveSectionStore } from '@/stores/active-section-store'
+import { useSectionInView } from '@/hooks/useSectionInView'
 import { SectionHeading } from '@/components/section-heading'
 
 export default function About() {
-  const ref = useRef<HTMLElement>(null)
-  const isInView = useInView(ref, { amount: 0.75 })
-
-  const { setActiveSection, timeOfLastClick } = useActiveSectionStore()
-
-  useEffect(() => {
-    if (isInView && Date.now() - timeOfLastClick > 1000) {
-      setActiveSection('About')
-    }
-  }, [isInView, setActiveSection, timeOfLastClick])
+  
+  const ref = useSectionInView<HTMLElement>({ sectionName: 'About', amount: 0.75 })
 
   return (
     <motion.section

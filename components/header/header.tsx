@@ -4,14 +4,14 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 
 import { useActiveSectionStore } from '@/stores/active-section-store'
-import { TSection } from '@/types/utils.type'
+import { TSectionName } from '@/types/utils.type'
 import { links } from '@/lib/data'
 import { cn } from '@/utils'
 
 export default function Header() {
   const { activeSection, setActiveSection, setTimeOfLastClick } = useActiveSectionStore()
 
-  function handleClickSectionLink(sectionName: TSection) {
+  function handleClickSectionLink(sectionName: TSectionName) {
     setTimeOfLastClick(Date.now())
     setActiveSection(sectionName)
   }

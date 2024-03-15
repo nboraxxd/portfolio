@@ -1,10 +1,10 @@
 import { create } from 'zustand'
 
-import { TSection } from '@/types/utils.type'
+import { TSectionName } from '@/types/utils.type'
 
 type TActiveSectionStore = {
-  activeSection: TSection
-  setActiveSection: (activeSection: TSection) => void
+  activeSection: TSectionName
+  setActiveSection: (activeSection: TSectionName) => void
   timeOfLastClick: number
   setTimeOfLastClick: (timeOfLastClick: number) => void
 }

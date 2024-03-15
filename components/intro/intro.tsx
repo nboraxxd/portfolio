@@ -1,28 +1,19 @@
 'use client'
 
 import Image from 'next/image'
-import { useEffect, useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { BsArrowRight } from 'react-icons/bs'
 import { HiDownload } from 'react-icons/hi'
 import { FaGithub } from 'react-icons/fa'
 
-import { useActiveSectionStore } from '@/stores/active-section-store'
+import { useSectionInView } from '@/hooks/useSectionInView'
 import { CTALink } from '@/components/intro'
 import avatar from '@/public/avatar.png'
 
 export default function Intro() {
   const MotionImage = motion(Image)
-  const ref = useRef<HTMLElement>(null)
-  const isInView = useInView(ref, { amount: 0.75 })
 
-  const { setActiveSection, timeOfLastClick } = useActiveSectionStore()
-
-  useEffect(() => {
-    if (isInView && Date.now() - timeOfLastClick > 1000) {
-      setActiveSection('Home')
-    }
-  }, [isInView, setActiveSection, timeOfLastClick])
+  const ref = useSectionInView<HTMLElement>({ sectionName: 'Home', amount: 0.75 })
 
   return (
     <section id="home" ref={ref} className="mx-auto mb-28 max-w-[50rem] scroll-mt-96 text-center sm:mb-0">
