@@ -64,6 +64,7 @@ export default function Project({ project }: Props) {
             src={imageUrl}
             alt={title}
             quality={95}
+            priority
             className="absolute -right-40 top-8 w-[28.25rem] rounded-t-lg object-cover shadow-2xl transition hover:-translate-x-3 hover:translate-y-3 hover:-rotate-2 hover:scale-[1.04] group-even:-left-40 group-even:right-[initial] group-even:hover:translate-x-3 group-even:hover:rotate-2 max-sm:hidden"
           />
         </Link>

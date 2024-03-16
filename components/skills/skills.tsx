@@ -12,7 +12,7 @@ const fadeInAnimationVariants: Variants = {
 }
 
 export default function Skills() {
-  const ref = useSectionInView<HTMLElement>({ sectionName: 'Skills', amount: 0.75 })
+  const { ref } = useSectionInView<HTMLElement>({ sectionName: 'Skills', amount: 0.75 })
 
   return (
     <section id="skills" ref={ref} className="mb-28 max-w-[45rem] scroll-mt-28 text-center sm:mb-40">

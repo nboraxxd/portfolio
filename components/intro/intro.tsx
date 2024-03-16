@@ -13,7 +13,7 @@ import avatar from '@/public/avatar.png'
 export default function Intro() {
   const MotionImage = motion(Image)
 
-  const ref = useSectionInView<HTMLElement>({ sectionName: 'Home', amount: 0.75 })
+  const { ref } = useSectionInView<HTMLElement>({ sectionName: 'Home', amount: 0.75 })
 
   return (
     <section id="home" ref={ref} className="mx-auto mb-28 max-w-[50rem] scroll-mt-96 text-center sm:mb-0">

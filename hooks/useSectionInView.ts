@@ -7,11 +7,12 @@ import { TSectionName } from '@/types/utils.type'
 type TUseSectionInView = {
   sectionName: TSectionName
   amount?: number | 'some' | 'all'
+  once?: boolean
 }
 
-export function useSectionInView<T extends Element>({ sectionName, amount }: TUseSectionInView) {
+export function useSectionInView<T extends Element>({ sectionName, amount, once }: TUseSectionInView) {
   const ref = useRef<T>(null)
-  const isInView = useInView(ref, { amount })
+  const isInView = useInView(ref, { amount, once })
 
   const { setActiveSection, timeOfLastClick } = useActiveSectionStore()
 
@@ -21,5 +22,5 @@ export function useSectionInView<T extends Element>({ sectionName, amount }: TUs
     }
   }, [isInView, sectionName, setActiveSection, timeOfLastClick])
 
-  return ref
+  return { ref, isInView }
 }
