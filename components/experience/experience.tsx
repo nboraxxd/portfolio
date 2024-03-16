@@ -1,6 +1,6 @@
+/* eslint-disable tailwindcss/no-custom-classname */
 'use client'
 
-import { useRef } from 'react'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component'
 
 import { experiencesData } from '@/lib/data'
@@ -34,7 +34,7 @@ export default function Experience() {
               >
                 <h3 className="font-semibold capitalize">{item.title}</h3>
                 <p className="!mt-0 font-normal">{item.location}</p>
-                <p className="!mt-1 !font-normal text-gray-700">{item.description}</p>
+                <p className="!mt-1 line-clamp-5 !font-normal text-gray-700">{item.description}</p>
               </VerticalTimelineElement>
             </div>
           )

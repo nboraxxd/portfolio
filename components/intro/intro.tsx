@@ -9,11 +9,18 @@ import { FaGithub } from 'react-icons/fa'
 import { useSectionInView } from '@/hooks/useSectionInView'
 import { CTALink } from '@/components/intro'
 import avatar from '@/public/avatar.png'
+import { useActiveSectionStore } from '@/stores/active-section-store'
 
 export default function Intro() {
   const MotionImage = motion(Image)
 
+  const { setActiveSection, setTimeOfLastClick } = useActiveSectionStore()
   const { ref } = useSectionInView<HTMLElement>({ sectionName: 'Home', amount: 0.75 })
+
+  function handleClickContactLink() {
+    setActiveSection('Contact')
+    setTimeOfLastClick(Date.now())
+  }
 
   return (
     <section id="home" ref={ref} className="mx-auto mb-28 max-w-[50rem] scroll-mt-96 text-center sm:mb-0">
@@ -61,7 +68,11 @@ export default function Intro() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.1 }}
       >
-        <CTALink href="#contact" className="group bg-gray-900 px-7 py-3 text-white hover:bg-gray-950">
+        <CTALink
+          href="#contact"
+          onClick={handleClickContactLink}
+          className="group bg-gray-900 px-7 py-3 text-white hover:bg-gray-950"
+        >
           <span className="flex items-center gap-2 transition-transform group-hover:translate-x-1">
             Contact me here <BsArrowRight className="transition-transform group-hover:rotate-90" />
           </span>

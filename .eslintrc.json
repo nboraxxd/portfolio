@@ -19,10 +19,5 @@
       "callees": ["cn", "className"],
       "classRegex": ".*[Cc]lass[Nn]ame.*"
     }
-  },
-  "tailwindcss/no-custom-classname": [
-    {
-      "whitelist": ["vertical-timeline-element"]
-    }
-  ]
+  }
 }

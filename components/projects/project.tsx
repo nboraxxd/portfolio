@@ -36,14 +36,14 @@ export default function Project({ project }: Props) {
         <div className="flex h-full flex-col px-5 pb-7 pt-4 group-even:ml-auto sm:max-w-[50%] sm:pl-10 sm:pr-2 sm:pt-7 group-even:sm:pl-2 group-even:sm:pr-10">
           <div className="flex items-center gap-2">
             <h3 className="text-2xl font-medium transition-opacity">
-              <Link href={url} target="_blank" className="hover:opacity-80">
+              <Link href={url} target="_blank" className="focus-primary hover:opacity-80">
                 {title}
               </Link>
             </h3>
-            <Link href={url} target="_blank" className="p-1 transition-opacity hover:opacity-80">
+            <Link href={url} target="_blank" className="focus-primary p-1 transition-opacity hover:opacity-80">
               <FiExternalLink className="text-lg font-medium opacity-90" />
             </Link>
-            <Link href={github} target="_blank" className="p-1 transition-opacity hover:opacity-80">
+            <Link href={github} target="_blank" className="focus-primary p-1 transition-opacity hover:opacity-80">
               <FaGithub className="text-lg font-medium opacity-80" />
             </Link>
           </div>
