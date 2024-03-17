@@ -1,19 +1,24 @@
 'use client'
 
 import Link from 'next/link'
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { FaPaperPlane } from 'react-icons/fa'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 
-import { useSectionInView } from '@/hooks/useSectionInView'
+import { cn } from '@/utils'
+import { ServiceStatus } from '@/constants/enums'
 import { contactSchema } from '@/lib/validation'
+import { useSectionInView } from '@/hooks/useSectionInView'
 import { sendEmail } from '@/actions/send-email'
 import { SectionHeading } from '@/components/section-heading'
 
 export default function Contact() {
   const { ref } = useSectionInView<HTMLElement>({ sectionName: 'Contact', amount: 0.75 })
+
+  const [status, setStatus] = useState<ServiceStatus>(ServiceStatus.idle)
 
   const {
     register,
@@ -29,10 +34,17 @@ export default function Contact() {
   })
 
   async function onSubmit(data: z.infer<typeof contactSchema>) {
-    const result = await sendEmail(data.email, data.message)
-    console.log('🔥 ~ onSubmit ~ result:', result)
+    try {
+      setStatus(ServiceStatus.pending)
+      const result = await sendEmail(data.email, data.message)
 
-    reset()
+      reset()
+      setStatus(ServiceStatus.successful)
+      return result
+    } catch (error) {
+      setStatus(ServiceStatus.rejected)
+      console.log(error)
+    }
   }
 
   return (
@@ -70,10 +82,24 @@ export default function Contact() {
         <p className="mt-1 text-xs text-red-600">{errors.message?.message}</p>
         <button
           type="submit"
-          className="focus-primary group mt-4 flex w-[8rem] items-center justify-center gap-2 rounded-full bg-gray-900 px-4 py-3 text-gray-100 transition hover:scale-105 hover:bg-gray-950 active:scale-[1.03]"
+          disabled={status === ServiceStatus.pending}
+          className={cn(
+            'focus-primary group mt-4 flex w-[8rem] items-center justify-center gap-2 rounded-full bg-gray-900 px-4 py-3 text-gray-100 transition disabled:cursor-auto disabled:opacity-60',
+            {
+              'hover:scale-105 hover:bg-gray-950 active:scale-[1.03]': status !== ServiceStatus.pending,
+            }
+          )}
         >
-          Send
-          <FaPaperPlane className="text-xs text-white opacity-90 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
+          {status === ServiceStatus.pending ? (
+            <div className="inline-block size-6 animate-spin rounded-full border-[3px] border-current border-t-transparent">
+              <span className="sr-only">Loading...</span>
+            </div>
+          ) : (
+            <>
+              Send
+              <FaPaperPlane className="text-xs text-white opacity-90 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
+            </>
+          )}
         </button>
       </form>
     </motion.section>
