@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <footer className="mb-10 px-4 text-center text-gray-500">
+    <footer className="mb-16 px-4 text-center text-gray-500 dark:text-gray-400">
       <small className="mb-2 block text-xs">
         The portfolio is developed under the guidance of{' '}
         <Link href="https://bytegrad.com" target="_blank" className="focus-primary underline">

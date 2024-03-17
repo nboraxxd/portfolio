@@ -78,12 +78,12 @@ export default function Intro() {
           </span>
         </CTALink>
 
-        <CTALink href="/CV_NhatBao.pdf" download target="_blank" className="gap-2 px-7 py-3">
+        <CTALink href="/CV_NhatBao.pdf" download target="_blank" className="gap-2 px-7 py-3 dark:bg-white/10">
           Download CV <HiDownload className="opacity-90" />
         </CTALink>
 
-        <CTALink href="https://github.com/nboraxxd" target="_blank" className="p-4 text-gray-700">
-          <FaGithub />
+        <CTALink href="https://github.com/nboraxxd" target="_blank" className="p-4 text-gray-700 dark:bg-white/10">
+          <FaGithub className="dark:text-gray-50/90" />
         </CTALink>
       </motion.div>
     </section>

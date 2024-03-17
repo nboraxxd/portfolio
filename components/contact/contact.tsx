@@ -41,13 +41,13 @@ export default function Contact() {
 
       reset()
       setStatus(ServiceStatus.successful)
-      toast.success('Your message has been sent successfully.')
+      toast.success('Message sent successfully.')
     } catch (error) {
       setStatus(ServiceStatus.rejected)
       if (error instanceof Error) {
         toast.error(error.message)
       } else {
-        toast.error('An error occurred while sending the email. Please try again later.')
+        toast.error('An error occurred while sending the email.')
       }
     }
   }
@@ -63,7 +63,7 @@ export default function Contact() {
       className="mb-20 w-[min(100%,38rem)] scroll-mt-28 sm:mb-28"
     >
       <SectionHeading className="mb-2">Contact me</SectionHeading>
-      <p className="text-balance text-gray-700">
+      <p className="text-balance text-gray-700 dark:text-white/80">
         Please contact me directly at{' '}
         <Link href="mailto:nhatbaoxxd@gmail.com" target="_blank" className="focus-primary underline">
           nhatbaoxxd@gmail.com
@@ -76,22 +76,23 @@ export default function Contact() {
           type="email"
           placeholder="Your email"
           {...register('email')}
-          className="focus-primary h-14 w-full rounded-lg border border-black/10 p-4"
+          className="focus-primary h-14 w-full rounded-lg border border-black/10 p-4 dark:border-white/10 dark:bg-white/10 dark:text-white/80"
         />
-        <p className="mt-1 text-xs text-red-600">{errors.email?.message}</p>
+        <p className="mt-1.5 text-xs text-red-600">{errors.email?.message}</p>
         <textarea
           placeholder="Your message"
           {...register('message')}
-          className="focus-primary mt-4 h-52 w-full rounded-lg border border-black/10 p-4"
+          className="focus-primary mt-4 block h-52 w-full rounded-lg border border-black/10 p-4 dark:border-white/10 dark:bg-white/10 dark:text-white/80"
         />
-        <p className="mt-1 text-xs text-red-600">{errors.message?.message}</p>
+        <p className="mt-1.5 text-xs text-red-600">{errors.message?.message}</p>
         <button
           type="submit"
           disabled={status === ServiceStatus.pending}
           className={cn(
-            'focus-primary group mt-4 flex w-[8rem] items-center justify-center gap-2 rounded-full bg-gray-900 px-4 py-3 text-gray-100 transition disabled:cursor-auto disabled:opacity-60',
+            'focus-primary group mt-4 flex w-[8rem] items-center justify-center gap-2 rounded-full bg-gray-900 px-4 py-3 text-gray-100 transition disabled:cursor-auto disabled:opacity-60 dark:bg-white/10',
             {
-              'hover:scale-105 hover:bg-gray-950 active:scale-[1.03]': status !== ServiceStatus.pending,
+              'hover:scale-105 hover:bg-gray-950 active:scale-[1.03] dark:hover:bg-white/15':
+                status !== ServiceStatus.pending,
             }
           )}
         >

@@ -6,6 +6,10 @@ html {
   --line-color: #e5e7eb;
 }
 
+html.dark {
+  --line-color: rgba(255, 255, 255, 0.2);
+}
+
 @layer utilities {
   .focus-primary {
     @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#DBD7FB];

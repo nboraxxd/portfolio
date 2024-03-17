@@ -8,7 +8,7 @@ export default function ThemeSwitch() {
 
   return (
     <button
-      className="fixed bottom-5 right-5 flex size-12 items-center justify-center rounded-full border border-white/40 bg-white/80 shadow-2xl backdrop-blur-[0.5rem] transition-transform hover:scale-[1.15] active:scale-105"
+      className="fixed bottom-4 right-4 flex size-12 items-center justify-center rounded-full border border-white/40 bg-white/80 text-xl shadow-2xl backdrop-blur-[0.5rem] transition-transform hover:scale-[1.15] active:scale-105 dark:bg-gray-950 dark:text-gray-100"
       onClick={() => (theme === 'dark' ? setTheme('light') : setTheme('dark'))}
     >
       <BsSun className="rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />

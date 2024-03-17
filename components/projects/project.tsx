@@ -32,7 +32,7 @@ export default function Project({ project }: Props) {
       style={{ scale: scaleProgess, opacity: opacityProgess }}
       className="group mb-5 last:mb-0 sm:mb-8"
     >
-      <section className="relative flex w-full max-w-[42rem] overflow-hidden rounded-md border border-black/5 bg-gray-100 transition-colors hover:bg-gray-200 sm:h-[20rem]">
+      <section className="relative flex w-full max-w-[42rem] overflow-hidden rounded-md border border-black/5 bg-gray-100 transition hover:bg-gray-200/80 dark:bg-white/10 dark:hover:bg-white/[0.125] sm:h-[20rem]">
         <div className="flex h-full flex-col px-5 pb-7 pt-4 group-even:ml-auto sm:max-w-[50%] sm:pl-10 sm:pr-2 sm:pt-7 group-even:sm:pl-2 group-even:sm:pr-10">
           <div className="flex items-center gap-2">
             <h3 className="text-2xl font-medium transition-opacity">
@@ -47,12 +47,12 @@ export default function Project({ project }: Props) {
               <FaGithub className="text-lg font-medium opacity-80" />
             </Link>
           </div>
-          <p className="mb-4 mt-2 leading-relaxed text-gray-700 sm:line-clamp-5">{description}</p>
+          <p className="mb-4 mt-2 leading-relaxed text-gray-700 dark:text-gray-300 sm:line-clamp-5">{description}</p>
           <ul className="flex flex-wrap gap-2 sm:mt-auto">
             {tags.map((tag, index) => (
               <li
                 key={index}
-                className="rounded-full bg-black/70 px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white"
+                className="rounded-full bg-black/70 px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white dark:bg-black/30"
               >
                 {tag}
               </li>
