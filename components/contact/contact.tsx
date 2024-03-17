@@ -31,6 +31,7 @@ export default function Contact() {
   async function onSubmit(data: z.infer<typeof contactSchema>) {
     const result = await sendEmail(data.email, data.message)
     console.log('🔥 ~ onSubmit ~ result:', result)
+
     reset()
   }
 

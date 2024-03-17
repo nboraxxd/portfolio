@@ -1,18 +1,26 @@
 'use server'
 
 import { Resend } from 'resend'
+import { getErrorMessage } from '@/utils'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function sendEmail(email: string, message: string) {
-  console.log('running on the server!')
+  try {
+    const { data, error } = await resend.emails.send({
+      from: `Contact form <${process.env.RESEND_SENDER_EMAIL as string}>`,
+      to: 'nhatbaoxxd@gmail.com',
+      subject: 'New message from your portfolio',
+      reply_to: email,
+      text: message,
+    })
 
-  const { data } = await resend.emails.send({
-    from: email,
-    to: 'nhatbaoxxd@gmail.com',
-    subject: 'New message from your portfolio',
-    text: message,
-  })
+    if (error) {
+      throw error
+    }
 
-  return data
+    return data
+  } catch (error) {
+    return getErrorMessage(error)
+  }
 }

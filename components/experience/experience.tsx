@@ -1,6 +1,8 @@
 /* eslint-disable tailwindcss/no-custom-classname */
 'use client'
 
+import { useRef } from 'react'
+import { useInView } from 'framer-motion'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component'
 
 import { experiencesData } from '@/lib/data'
@@ -9,7 +11,10 @@ import { SectionHeading } from '@/components/section-heading'
 import 'react-vertical-timeline-component/style.min.css'
 
 export default function Experience() {
-  const { ref, isInView } = useSectionInView<HTMLElement>({ sectionName: 'Experience', amount: 0.5, once: true })
+  const { ref } = useSectionInView<HTMLElement>({ sectionName: 'Experience', amount: 0.75 })
+
+  const timelineRef = useRef<HTMLDivElement>(null)
+  const isTimelineInView = useInView(timelineRef, { once: true })
 
   return (
     <section id="experience" ref={ref} className="mb-28 scroll-mt-28 sm:mb-40">
@@ -17,9 +22,9 @@ export default function Experience() {
       <VerticalTimeline lineColor="">
         {experiencesData.map((item, index) => {
           return (
-            <div key={index} className="vertical-timeline-element">
+            <div key={index} ref={timelineRef} className="vertical-timeline-element">
               <VerticalTimelineElement
-                visible={isInView}
+                visible={isTimelineInView}
                 contentStyle={{
                   background: '#f3f4f6',
                   boxShadow: 'none',
