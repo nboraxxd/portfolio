@@ -2,7 +2,6 @@
 'use client'
 
 import { useRef } from 'react'
-import { useTheme } from 'next-themes'
 import { useInView } from 'framer-motion'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component'
 
@@ -16,7 +15,6 @@ export default function Experience() {
 
   const timelineRef = useRef<HTMLDivElement>(null)
   const isTimelineInView = useInView(timelineRef, { once: true })
-  const { theme } = useTheme()
 
   return (
     <section id="experience" ref={ref} className="mb-28 scroll-mt-28 overflow-x-hidden sm:mb-40">
@@ -28,21 +26,15 @@ export default function Experience() {
               <VerticalTimelineElement
                 visible={isTimelineInView}
                 contentStyle={{
-                  background: theme === 'light' ? '#f3f4f6' : 'rgba(255, 255, 255, 0.05)',
                   boxShadow: 'none',
                   border: '1px solid rgba(0, 0, 0, 0.05)',
                   textAlign: 'left',
                   padding: '1.3rem 2rem',
                 }}
-                contentArrowStyle={{
-                  borderRight: theme === 'light' ? '0.5rem solid #e8e8e8' : '0.5rem solid rgba(255, 255, 255, 0.1)',
-                }}
+                contentArrowStyle={{}}
                 date={item.date}
                 icon={item.icon}
-                iconStyle={{
-                  background: theme === 'light' ? '#fff' : 'rgb(17 24 39)',
-                  fontSize: '1.5rem',
-                }}
+                iconStyle={{ fontSize: '1.5rem' }}
               >
                 <h3 className="font-semibold capitalize">{item.title}</h3>
                 <p className="!mt-0 font-normal">{item.location}</p>

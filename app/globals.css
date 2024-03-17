@@ -10,6 +10,19 @@ html.dark {
   --line-color: rgba(255, 255, 255, 0.2);
 }
 
+.vertical-timeline-element-content {
+  @apply !bg-[#f3f4f6] dark:!bg-white/[0.05];
+}
+
+.vertical-timeline-element-content-arrow {
+  @apply !border-r-[#eee] dark:!border-r-white/[0.1];
+}
+
+.vertical-timeline-element-icon {
+  @apply !bg-[#fff] dark:!bg-gray-900;
+
+}
+
 @layer utilities {
   .focus-primary {
     @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#DBD7FB];
