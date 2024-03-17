@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import toast from 'react-hot-toast'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { FaPaperPlane } from 'react-icons/fa'
@@ -36,14 +37,18 @@ export default function Contact() {
   async function onSubmit(data: z.infer<typeof contactSchema>) {
     try {
       setStatus(ServiceStatus.pending)
-      const result = await sendEmail(data.email, data.message)
+      await sendEmail(data.email, data.message)
 
       reset()
       setStatus(ServiceStatus.successful)
-      return result
+      toast.success('Your message has been sent successfully.')
     } catch (error) {
       setStatus(ServiceStatus.rejected)
-      console.log(error)
+      if (error instanceof Error) {
+        toast.error(error.message)
+      } else {
+        toast.error('An error occurred while sending the email. Please try again later.')
+      }
     }
   }
 

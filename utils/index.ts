@@ -7,10 +7,10 @@ export function cn(...inputs: ClassValue[]) {
 
 export function getErrorMessage(error: unknown) {
   if (error instanceof Error) {
-    return { error: error.message }
+    return error.message
   } else if (error && typeof error === 'object' && 'message' in error) {
-    return { error: String(error.message) }
+    return error.message
   } else {
-    return { error: 'An unknown error occurred' }
+    return 'An unknown error occurred'
   }
 }
