@@ -17,12 +17,12 @@ export default function Experience() {
   const isTimelineInView = useInView(timelineRef, { once: true })
 
   return (
-    <section id="experience" ref={ref} className="mb-28 scroll-mt-28 overflow-x-hidden sm:mb-40">
+    <section id="experience" ref={ref} className="mb-28 scroll-mt-28 sm:mb-40">
       <SectionHeading>My experience</SectionHeading>
       <VerticalTimeline lineColor="">
         {experiencesData.map((item, index) => {
           return (
-            <div key={index} ref={timelineRef} className="vertical-timeline-element">
+            <div key={index} ref={timelineRef} className="vertical-timeline-element overflow-x-hidden">
               <VerticalTimelineElement
                 visible={isTimelineInView}
                 contentStyle={{
