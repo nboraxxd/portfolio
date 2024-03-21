@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { useInView } from 'framer-motion'
 
-import { useActiveSectionStore } from '@/stores/active-section-store'
+import { useActiveSectionStore, setActiveSection } from '@/stores/active-section-store'
 import { TSectionName } from '@/types/utils.type'
 
 type TUseSectionInView = {
@@ -14,13 +14,13 @@ export function useSectionInView<T extends Element>({ sectionName, amount, once 
   const ref = useRef<T>(null)
   const isInView = useInView(ref, { amount, once })
 
-  const { setActiveSection, timeOfLastClick } = useActiveSectionStore()
+  const timeOfLastClick = useActiveSectionStore((state) => state.timeOfLastClick)
 
   useEffect(() => {
     if (isInView && Date.now() - timeOfLastClick > 1000) {
       setActiveSection(sectionName)
     }
-  }, [isInView, sectionName, setActiveSection, timeOfLastClick])
+  }, [isInView, sectionName, timeOfLastClick])
 
   return { ref, isInView }
 }

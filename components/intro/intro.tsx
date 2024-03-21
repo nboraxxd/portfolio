@@ -6,15 +6,14 @@ import { BsArrowRight } from 'react-icons/bs'
 import { HiDownload } from 'react-icons/hi'
 import { FaGithub } from 'react-icons/fa'
 
+import { setActiveSection, setTimeOfLastClick } from '@/stores/active-section-store'
 import { useSectionInView } from '@/hooks/useSectionInView'
 import { CTALink } from '@/components/intro'
 import avatar from '@/public/avatar.png'
-import { useActiveSectionStore } from '@/stores/active-section-store'
 
 export default function Intro() {
   const MotionImage = motion(Image)
 
-  const { setActiveSection, setTimeOfLastClick } = useActiveSectionStore()
   const { ref } = useSectionInView<HTMLElement>({ sectionName: 'Home', amount: 0.75 })
 
   function handleClickContactLink() {

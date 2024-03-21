@@ -63,7 +63,7 @@ export default function Contact() {
       className="mb-20 w-[min(100%,38rem)] scroll-mt-28 sm:mb-28"
     >
       <SectionHeading className="mb-2">Contact me</SectionHeading>
-      <p className="text-balance text-gray-700 dark:text-white/80">
+      <p className="text-balance text-center text-gray-700 dark:text-white/80">
         Please contact me directly at{' '}
         <Link href="mailto:nhatbaoxxd@gmail.com" target="_blank" className="focus-primary underline">
           nhatbaoxxd@gmail.com
