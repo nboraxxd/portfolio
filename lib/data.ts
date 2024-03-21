@@ -70,7 +70,7 @@ export const projectsData = [
     tags: ['React', 'TypeScript', 'Chakra UI', 'TanStack Query'],
     imageUrl: gamehubImg,
     github: 'https://github.com/nboraxxd/game-hub',
-    url: 'https://game-hub-seven-phi.vercel.app',
+    url: 'https://supergamehub.vercel.app',
   },
   {
     id: uuidv4(),
