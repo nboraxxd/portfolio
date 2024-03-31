@@ -7,6 +7,9 @@ import { LuGraduationCap } from 'react-icons/lu'
 import gamehubImg from '@/public/game-hub.png'
 import sellCoursesImg from '@/public/sell-courses.png'
 import shopeeImg from '@/public/shopee.png'
+import devflowImg from '@/public/devflow.png'
+import mogoImg from '@/public/mogo.jpg'
+import besnikImg from '@/public/besnik.png'
 
 export const links = [
   {
@@ -37,27 +40,27 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: 'Graduated bootcamp',
-    location: 'Miami, FL',
-    description: 'I graduated after 6 months of studying. I immediately found a job as a front-end developer.',
+    title: 'Ton Duc Thang University',
+    location: 'Ho Chi Minh City',
+    description: 'I study business administration. I studied here for 3 years.',
     icon: React.createElement(LuGraduationCap),
-    date: '2019',
+    date: '2014-2017',
   },
   {
-    title: 'Front-End Developer',
-    location: 'Orlando, FL',
+    title: 'Sales Associate',
+    location: 'Ho Chi Minh City',
     description:
-      'I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.',
+      'I worked as a sales associate for 3A Nutrition company. I learned a lot of things about sales and communication. I also learned how to work in a team.',
     icon: React.createElement(CgWorkAlt),
-    date: '2019 - 2021',
+    date: '2018 - 2022',
   },
   {
-    title: 'Full-Stack Developer',
-    location: 'Houston, TX',
+    title: 'I self-studied front-end development.',
+    location: 'Binh Thuan',
     description:
-      "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
+      "I've been learning front-end development for a year. I've built some projects and learned a lot of things. I'm still learning and improving my skills.",
     icon: React.createElement(FaReact),
-    date: '2021 - present',
+    date: '2022 - present',
   },
 ] as const
 
@@ -92,21 +95,49 @@ export const projectsData = [
     github: 'https://github.com/nboraxxd/shopee-site',
     url: 'https://shopee-site-xi.vercel.app',
   },
+  {
+    id: uuidv4(),
+    title: 'Devflow',
+    description:
+      'DevOverflow is a complex Q&A platform for developers to ask questions, share knowledge, and learn from each other.',
+    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Clerk', 'MongoDB'],
+    imageUrl: devflowImg,
+    github: 'https://github.com/nboraxxd/devflow',
+    url: 'https://devflow-red.vercel.app',
+  },
+  {
+    id: uuidv4(),
+    title: 'Mogo',
+    description: 'A landing page for a fictional company called Mogo. I was the front-end developer.',
+    tags: ['HTML', 'CSS', 'SCSS', 'Pug', 'JavaScript'],
+    imageUrl: mogoImg,
+    github: 'https://github.com/nboraxxd/MoGo',
+    url: 'https://mogo-pink.vercel.app',
+  },
+  {
+    id: uuidv4(),
+    title: 'Besnik',
+    description: 'A landing page for a fictional company called Besnik. I was the front-end developer.',
+    tags: ['HTML', 'CSS'],
+    imageUrl: besnikImg,
+    github: 'https://github.com/nboraxxd/besnik',
+    url: 'https://nboraxxd.github.io/besnik/',
+  },
 ] as const
 
 export const skillsData = [
   'HTML',
   'CSS',
+  'SCSS',
   'JavaScript',
   'TypeScript',
   'React',
   'Next.js',
   'Node.js',
+  'Express',
+  'MongoDB',
   'Git',
   'Tailwind',
-  'Prisma',
-  'MongoDB',
-  'Redux',
-  'Express',
+  'TanStack Query',
   'Framer Motion',
 ] as const

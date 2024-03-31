@@ -9,7 +9,7 @@ import { FaGithub } from 'react-icons/fa'
 import { setActiveSection, setTimeOfLastClick } from '@/stores/active-section-store'
 import { useSectionInView } from '@/hooks/useSectionInView'
 import { CTALink } from '@/components/intro'
-import avatar from '@/public/avatar.png'
+import avatar from '@/public/avatar-1.png'
 
 export default function Intro() {
   const MotionImage = motion(Image)
@@ -33,7 +33,7 @@ export default function Intro() {
             height={96}
             quality={95}
             priority
-            className="size-24 rounded-full border-[0.35rem] border-white object-cover shadow-xl"
+            className="size-24 rounded-full border-[0.35rem] border-white object-cover object-top shadow-xl"
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ type: 'tween', duration: 0.2 }}
@@ -77,7 +77,7 @@ export default function Intro() {
           </span>
         </CTALink>
 
-        <CTALink href="/CV_NhatBao.pdf" download target="_blank" className="gap-2 px-7 py-3 dark:bg-white/10">
+        <CTALink href="/CV_NguyenHuuNhatBao.pdf" download target="_blank" className="gap-2 px-7 py-3 dark:bg-white/10">
           Download CV <HiDownload className="opacity-90" />
         </CTALink>
 
