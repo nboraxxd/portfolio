@@ -6,7 +6,7 @@ import { Project } from '@/components/projects'
 import { SectionHeading } from '@/components/section-heading'
 
 export default function Projects() {
-  const { ref } = useSectionInView<HTMLElement>({ sectionName: 'Projects', amount: 0.25 })
+  const { ref } = useSectionInView<HTMLElement>({ sectionName: 'Projects', amount: 0.2 })
 
   return (
     <section id="projects" ref={ref} className="mb-28 scroll-mt-28 sm:mb-40">

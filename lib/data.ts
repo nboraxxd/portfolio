@@ -5,8 +5,11 @@ import { FaReact } from 'react-icons/fa'
 import { LuGraduationCap } from 'react-icons/lu'
 
 import gamehubImg from '@/public/game-hub.png'
-import sellCoursesImg from '@/public/sell-courses.png'
+import shopperImg from '@/public/shopper.png'
 import shopeeImg from '@/public/shopee.png'
+import smallerImg from '@/public/smaller.png'
+import sproutscribbleImage from '@/public/sproutscribble.png'
+import sellCoursesImg from '@/public/sell-courses.png'
 import devflowImg from '@/public/devflow.png'
 import mogoImg from '@/public/mogo.jpg'
 import besnikImg from '@/public/besnik.png'
@@ -77,13 +80,13 @@ export const projectsData = [
   },
   {
     id: uuidv4(),
-    title: 'Sell Courses',
+    title: 'Shopper',
     description:
-      'A platform for selling courses. It has features like user authentication, course creation, course purchasing and course rating. I was the front-end developer.',
-    tags: ['React', 'Javascript', 'Redux', 'Bootstrap'],
-    imageUrl: sellCoursesImg,
-    github: 'https://github.com/nboraxxd/sell-courses',
-    url: 'https://sell-courses.vercel.app',
+      'A shopping website. It has features like user authentication, product listing, product searching and product purchasing. I was the front-end developer.',
+    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Zustand', 'TanStack Query'],
+    imageUrl: shopperImg,
+    github: 'https://github.com/nboraxxd/shopper',
+    url: 'https://shopper-black.vercel.app/products',
   },
   {
     id: uuidv4(),
@@ -94,6 +97,36 @@ export const projectsData = [
     imageUrl: shopeeImg,
     github: 'https://github.com/nboraxxd/shopee-site',
     url: 'https://shopee-site-xi.vercel.app',
+  },
+  {
+    id: uuidv4(),
+    title: 'Smaller',
+    description:
+      'Similar to the Shopper project, but it uses Next.js for server-side rendering. I was the front-end developer.',
+    tags: ['Next.js', 'TypeScript', 'shadcn/ui', 'Server-side Rendering'],
+    imageUrl: smallerImg,
+    github: 'https://github.com/nboraxxd/smaller',
+    url: 'https://smaller-red.vercel.app',
+  },
+  {
+    id: uuidv4(),
+    title: 'sprout & scribble',
+    description:
+      'E-commerce platform with features like user authentication, admin dashboard, product listing and product purchasing.',
+    tags: ['Next.js', 'Auth.js', 'Mailgun', 'Drizzle ORM', 'PostgreSQL'],
+    imageUrl: sproutscribbleImage,
+    github: 'https://github.com/nboraxxd/sprout-scribble',
+    url: 'https://sproutscribble.online',
+  },
+  {
+    id: uuidv4(),
+    title: 'Sell Courses',
+    description:
+      'A platform for selling courses. It has features like user authentication, course creation, course purchasing and course rating. I was the front-end developer.',
+    tags: ['React', 'Javascript', 'Redux', 'Bootstrap'],
+    imageUrl: sellCoursesImg,
+    github: 'https://github.com/nboraxxd/sell-courses',
+    url: 'https://sell-courses.vercel.app',
   },
   {
     id: uuidv4(),

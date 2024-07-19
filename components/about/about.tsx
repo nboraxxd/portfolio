@@ -18,21 +18,14 @@ export default function About() {
       transition={{ delay: 0.175 }}
     >
       <SectionHeading>About Me</SectionHeading>
-
       <p className="mb-3">
-        After graduating with a degree in <span className="font-medium">Accounting</span>, I decided to pursue my
-        passion for programming. I enrolled in a coding bootcamp and learned{' '}
-        <span className="font-medium">full-stack web development</span>.{' '}
-        <span className="italic">My favorite part of programming</span> is the problem-solving aspect. I{' '}
-        <span className="underline">love</span> the feeling of finally figuring out a solution to a problem. My core
-        stack is <span className="font-medium">React, Next.js, Node.js, and MongoDB</span>. I am also familiar with
-        TypeScript and Prisma. I am always looking to learn new technologies. I am currently looking for a{' '}
-        <span className="font-medium">full-time position</span> as a software developer.
+        I worked as a <span className="font-medium">sales associate</span> for a few years. I decided to learn
+        JavaScript to become a web developer. I took courses in frontend and backend development. My core stack is
+        React, Next.js, and TypeScript. I am also familiar with Express.js, MongoDB and Prisma.
       </p>
       <p>
-        <span className="italic">When I'm not coding</span>, I enjoy playing video games, watching movies, and playing
-        with my dog. I also enjoy <span className="font-medium">learning new things</span>. I am currently learning
-        about <span className="font-medium">history and philosophy</span>. I'm also learning how to play the guitar.
+        Currently, I am trying to dedicate time to complete projects and learn more about JavaScript, Angular, NestJS
+        and English. I am looking for a <span className="font-medium">full-time frontend development</span> position.
       </p>
     </motion.section>
   )

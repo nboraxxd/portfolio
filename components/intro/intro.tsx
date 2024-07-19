@@ -9,7 +9,7 @@ import { FaGithub } from 'react-icons/fa'
 import { setActiveSection, setTimeOfLastClick } from '@/stores/active-section-store'
 import { useSectionInView } from '@/hooks/useSectionInView'
 import { CTALink } from '@/components/intro'
-import avatar from '@/public/avatar-1.png'
+import avatar from '@/public/avatar-2.jpg'
 
 export default function Intro() {
   const MotionImage = motion(Image)
@@ -28,7 +28,7 @@ export default function Intro() {
         <div className="relative">
           <MotionImage
             src={avatar}
-            alt="nbora portrait"
+            alt="Bao's portrait"
             width={96}
             height={96}
             quality={95}
@@ -56,7 +56,7 @@ export default function Intro() {
         animate={{ y: 0, opacity: 1 }}
       >
         <span className="font-bold">Hello, I'm Bao.</span> I'm a <span className="font-bold">frontend developer</span>{' '}
-        with <span className="font-bold">1 years</span> of experience. I enjoy building{' '}
+        with <span className="font-bold">1 year</span> of experience. I enjoy building{' '}
         <span className="italic">sites & apps</span>. My focus is <span className="underline">React (Next.js)</span>.
       </motion.h1>
 
