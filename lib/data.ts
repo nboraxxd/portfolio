@@ -4,15 +4,15 @@ import { CgWorkAlt } from 'react-icons/cg'
 import { FaReact } from 'react-icons/fa'
 import { LuGraduationCap } from 'react-icons/lu'
 
-import gamehubImg from '@/public/game-hub.png'
-import shopperImg from '@/public/shopper.png'
-import shopeeImg from '@/public/shopee.png'
-import smallerImg from '@/public/smaller.png'
-import sproutscribbleImage from '@/public/sproutscribble.png'
-import sellCoursesImg from '@/public/sell-courses.png'
-import devflowImg from '@/public/devflow.png'
 import mogoImg from '@/public/mogo.jpg'
 import besnikImg from '@/public/besnik.png'
+import shopeeImg from '@/public/shopee.png'
+import devflowImg from '@/public/devflow.png'
+import gamehubImg from '@/public/game-hub.png'
+import shopperImg from '@/public/shopper-new.png'
+import sellCoursesImg from '@/public/sell-courses.png'
+import nmoviesClientImage from '@/public/nmovies-client.png'
+import nmoviesServerImage from '@/public/nmovies-server.png'
 
 export const links = [
   {
@@ -70,6 +70,36 @@ export const experiencesData = [
 export const projectsData = [
   {
     id: uuidv4(),
+    title: 'Shopper',
+    description:
+      'A shopping website using Next.js, React, TypeScript, Tailwind CSS, shadcn/ui, TanStack Query. I was the front-end developer.',
+    tags: ['Next.js,', 'React', 'TypeScript', 'shadcn/ui', 'zustand', 'TanStack Query'],
+    imageUrl: shopperImg,
+    github: 'https://github.com/nboraxxd/shopper-next',
+    url: 'https://shopper.io.vn',
+  },
+  {
+    id: uuidv4(),
+    title: 'nmovies client',
+    description:
+      'The website allows users to search for movies and TV shows, get recommendations, and read reviews. I was the full-stack developer.',
+    tags: ['React', 'TypeScript', 'shadcn/ui', 'TanStack Query', 'Zod'],
+    imageUrl: nmoviesClientImage,
+    github: 'https://github.com/nboraxxd/nmovies-client',
+    url: 'https://nmovies-xoxo.vercel.app',
+  },
+  {
+    id: uuidv4(),
+    title: 'nmovies server',
+    description:
+      'The server provides data for the nmovies client. It has features like user authentication, movie searching, movie recommending, and movie reviewing.',
+    tags: ['Express', 'MongoDB', 'JWT', 'Mailgun', 'Heroku'],
+    imageUrl: nmoviesServerImage,
+    github: 'https://github.com/nboraxxd/nmovies-server',
+    url: 'https://nmovieserver-5428d07b6e36.herokuapp.com/api',
+  },
+  {
+    id: uuidv4(),
     title: 'Gamehub',
     description:
       'A social media platform for gamers. It has features like user authentication, posting, commenting, liking and following. I was the front-end developer.',
@@ -78,16 +108,7 @@ export const projectsData = [
     github: 'https://github.com/nboraxxd/game-hub',
     url: 'https://supergamehub.vercel.app',
   },
-  {
-    id: uuidv4(),
-    title: 'Shopper',
-    description:
-      'A shopping website. It has features like user authentication, product listing, product searching and product purchasing. I was the front-end developer.',
-    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Zustand', 'TanStack Query'],
-    imageUrl: shopperImg,
-    github: 'https://github.com/nboraxxd/shopper',
-    url: 'https://shopper-black.vercel.app/products',
-  },
+
   {
     id: uuidv4(),
     title: 'Shopee',
@@ -100,23 +121,13 @@ export const projectsData = [
   },
   {
     id: uuidv4(),
-    title: 'Smaller',
+    title: 'Devflow',
     description:
-      'Similar to the Shopper project, but it uses Next.js for server-side rendering. I was the front-end developer.',
-    tags: ['Next.js', 'TypeScript', 'shadcn/ui', 'Server-side Rendering'],
-    imageUrl: smallerImg,
-    github: 'https://github.com/nboraxxd/smaller',
-    url: 'https://smaller-red.vercel.app',
-  },
-  {
-    id: uuidv4(),
-    title: 'sprout & scribble',
-    description:
-      'E-commerce platform with features like user authentication, admin dashboard, product listing and product purchasing.',
-    tags: ['Next.js', 'Auth.js', 'Mailgun', 'Drizzle ORM', 'PostgreSQL'],
-    imageUrl: sproutscribbleImage,
-    github: 'https://github.com/nboraxxd/sprout-scribble',
-    url: 'https://sproutscribble.online',
+      'DevOverflow is a complex Q&A platform for developers to ask questions, share knowledge, and learn from each other.',
+    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Clerk', 'MongoDB'],
+    imageUrl: devflowImg,
+    github: 'https://github.com/nboraxxd/devflow',
+    url: 'https://devflow-green.vercel.app',
   },
   {
     id: uuidv4(),
@@ -127,16 +138,6 @@ export const projectsData = [
     imageUrl: sellCoursesImg,
     github: 'https://github.com/nboraxxd/sell-courses',
     url: 'https://sell-courses.vercel.app',
-  },
-  {
-    id: uuidv4(),
-    title: 'Devflow',
-    description:
-      'DevOverflow is a complex Q&A platform for developers to ask questions, share knowledge, and learn from each other.',
-    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Clerk', 'MongoDB'],
-    imageUrl: devflowImg,
-    github: 'https://github.com/nboraxxd/devflow',
-    url: 'https://devflow-red.vercel.app',
   },
   {
     id: uuidv4(),
